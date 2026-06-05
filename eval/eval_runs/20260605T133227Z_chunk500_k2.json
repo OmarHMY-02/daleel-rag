@@ -3,16 +3,16 @@
     "chunk_size": 500,
     "overlap": 75,
     "k": 2,
-    "backend": "ollama",
-    "model": "llama3.1:8b",
+    "backend": "groq",
+    "model": "llama-3.3-70b-versatile",
     "embed_model": "intfloat/multilingual-e5-small",
     "label": "chunk500_k2"
   },
-  "created_at": "2026-06-05T12:58:48+00:00",
+  "created_at": "2026-06-05T13:32:27+00:00",
   "aggregate": {
     "n_questions": 12,
-    "mean_faithfulness": 0.8597,
-    "mean_answer_relevance": 0.8959,
+    "mean_faithfulness": 1.0,
+    "mean_answer_relevance": 0.901,
     "mean_context_precision": 0.8636,
     "refusal_accuracy": 1.0
   },
@@ -25,7 +25,7 @@
       "gold_source_docs": [
         "02_leave_policy.md"
       ],
-      "answer": "Confirmed full-time employees accrue 30 calendar days of annual leave per year.\n\nSources:\n02_leave_policy.md — 1. Annual Leave\n02_leave_policy.md — 7. Public Holidays",
+      "answer": "Confirmed full-time employees accrue 30 calendar days of annual leave per year.\n\nSources: 02_leave_policy.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -44,7 +44,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.89,
+        "answer_relevance": 0.8964,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -57,7 +57,7 @@
       "gold_source_docs": [
         "03_benefits_guide.md"
       ],
-      "answer": "For the first five years of service: 21 days of basic pay for each year of service.\n- For each year beyond five years: 30 days of basic pay for each year.\n\nAn employee with a basic salary of AED 12,000 and 7 years of service receives (5 × 21 days) + (2 × 30 days) = 105 + 60 = 165 days. Daily basic pay is 12,000 ÷ 30 = AED 400, so gratuity = 165 × 400 = **AED 66,000**.\n\nSources:\n03_benefits_guide.md\n01_employee_handbook.md",
+      "answer": "The end-of-service gratuity for someone with a 12,000 AED basic salary and 7 years of service is AED 66,000.\n\nSources: 03_benefits_guide.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -75,8 +75,8 @@
         }
       ],
       "metrics": {
-        "faithfulness": 0.6,
-        "answer_relevance": 0.8947,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.9587,
         "context_precision": 0.5,
         "refusal_correct": true
       }
@@ -89,7 +89,7 @@
       "gold_source_docs": [
         "04_returns_policy.md"
       ],
-      "answer": "According to the context passage [1], opened cosmetics are non-returnable unless faulty.\n\nSources:\n04_returns_policy.md",
+      "answer": "Opened cosmetics are non-returnable unless faulty. \n\nSources: 04_returns_policy.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -108,7 +108,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.9074,
+        "answer_relevance": 0.9191,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -121,7 +121,7 @@
       "gold_source_docs": [
         "05_loyalty_terms.md"
       ],
-      "answer": "To reach the Platinum loyalty tier, you need to have an annual spend of AED 30,000.\n\nAs a Platinum member, you will earn a 20% point bonus, free express delivery, and a dedicated support line.\n\nSources:\n05_loyalty_terms.md (Membership Tiers)",
+      "answer": "To reach the Platinum loyalty tier, you need an annual spend of AED 30,000. As a Platinum member, you earn a 20% point bonus, get free express delivery, and have access to a dedicated support line.\n\nSources: 05_loyalty_terms.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -140,7 +140,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.901,
+        "answer_relevance": 0.8979,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -153,7 +153,7 @@
       "gold_source_docs": [
         "01_employee_handbook.md"
       ],
-      "answer": "The probation period is six months. During this time, either party may terminate employment with 14 days' written notice.\n\nSources:\n01_employee_handbook.md\n02_leave_policy.md",
+      "answer": "The probation period is six months, and during this time, either party may terminate employment with 14 days' written notice.\n\nSources: 01_employee_handbook.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -172,7 +172,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.8852,
+        "answer_relevance": 0.8777,
         "context_precision": 0.5,
         "refusal_correct": true
       }
@@ -185,7 +185,7 @@
       "gold_source_docs": [
         "05_loyalty_terms.md"
       ],
-      "answer": "As a Gold member, you earn standard points for eligible purchases (1 point per AED 1). However, since you're buying own-brand Najmah products, they earn double points. So, you'll get 2 points per AED 1 spent on own-brand products.\n\nSources:\n05_loyalty_terms.md",
+      "answer": "For own-brand Najmah products on a Gold membership, you earn double points (2 points per AED 1) and an additional 10% point bonus. This means you earn 2.2 points per AED 1 spent.\n\nSources: 05_loyalty_terms.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -204,7 +204,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.9086,
+        "answer_relevance": 0.8862,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -217,7 +217,7 @@
       "gold_source_docs": [
         "06_data_protection.md"
       ],
-      "answer": "A suspected data breach must be reported to the Data Protection Officer within 24 hours of discovery.\n\nSources:\n06_data_protection.md — 6. Security\n06_data_protection.md — 4. Data Subject Rights",
+      "answer": "A suspected data breach must be reported within 24 hours of discovery to the Data Protection Officer.\n\nSources: 06_data_protection.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -235,8 +235,8 @@
         }
       ],
       "metrics": {
-        "faithfulness": 0.25,
-        "answer_relevance": 0.8887,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8847,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -250,7 +250,7 @@
         "04_returns_policy.md",
         "05_loyalty_terms.md"
       ],
-      "answer": "According to [2], when a purchase is refunded, the points earned on it are deducted. Since you used a loyalty discount, your original balance of points was likely reduced due to this discount. However, since you returned an item, those points will be further deducted from your balance.\n\nIf the deduction would take the balance below zero, the balance is set to zero (as stated in [2]).\n\nSources:\n05_loyalty_terms.md\n04_returns_policy.md",
+      "answer": "When you return an item, the loyalty points earned on that purchase are reversed or deducted. If the deduction would take your balance below zero, it is set to zero. \n\nSources: 04_returns_policy.md, 05_loyalty_terms.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -268,8 +268,8 @@
         }
       ],
       "metrics": {
-        "faithfulness": 0.75,
-        "answer_relevance": 0.9035,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.9127,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -282,7 +282,7 @@
       "gold_source_docs": [
         "02_leave_policy.md"
       ],
-      "answer": "According to passage [1], female employees are entitled to 45 days of maternity leave at full pay.\n\nSources:\n02_leave_policy.md — 3. Maternity Leave\n02_leave_policy.md — 4. Parental Leave",
+      "answer": "Female employees are entitled to 45 days of maternity leave at full pay.\n\nSources: 02_leave_policy.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -301,7 +301,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.9011,
+        "answer_relevance": 0.9019,
         "context_precision": 1.0,
         "refusal_correct": true
       }
@@ -312,7 +312,7 @@
       "type": "unanswerable",
       "ground_truth": "The provided documents do not mention a gym membership benefit, so this cannot be answered from the available information.",
       "gold_source_docs": [],
-      "answer": "I cannot answer this from the available documents.",
+      "answer": "I cannot answer this from the available documents. \nSources: 05_loyalty_terms.md, 03_benefits_guide.md",
       "refused": true,
       "expected_refusal": true,
       "retrieved": [
@@ -344,7 +344,7 @@
       "gold_source_docs": [
         "04_returns_policy.md"
       ],
-      "answer": "Cash purchases above AED 1,000 are refunded by bank transfer within 5 business days for security reasons.\n\nSources:\n04_returns_policy.md\n05_loyalty_terms.md",
+      "answer": "Cash refunds above AED 1,000 are handled by bank transfer within 5 business days for security reasons.\n\nSources: 04_returns_policy.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -362,8 +362,8 @@
         }
       ],
       "metrics": {
-        "faithfulness": 0.8571,
-        "answer_relevance": 0.8877,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8932,
         "context_precision": 0.5,
         "refusal_correct": true
       }
@@ -376,7 +376,7 @@
       "gold_source_docs": [
         "06_data_protection.md"
       ],
-      "answer": "Customer transaction records are retained for 5 years to meet tax and audit obligations.\n\nSources:\n06_data_protection.md — 5. Retention, \n06_data_protection.md — 4. Data Subject Rights",
+      "answer": "Customer transaction records are retained for 5 years to meet tax and audit obligations.\n\nSources: 06_data_protection.md",
       "refused": false,
       "expected_refusal": false,
       "retrieved": [
@@ -395,7 +395,7 @@
       ],
       "metrics": {
         "faithfulness": 1.0,
-        "answer_relevance": 0.8875,
+        "answer_relevance": 0.8827,
         "context_precision": 1.0,
         "refusal_correct": true
       }
