@@ -72,7 +72,7 @@ def main():
         st.divider()
         st.caption("**Try a question:**")
         for s in SUGGESTIONS:
-            if st.button(s, use_container_width=True):
+            if st.button(s, width="stretch"):
                 st.session_state["pending"] = s
                 st.rerun()
 
@@ -139,7 +139,4 @@ def _render_citations(contexts):
             st.caption(c["text"])
 
 
-if __name__ == "__main__":
-    main()
-else:
-    main()
+main()

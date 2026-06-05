@@ -105,7 +105,7 @@ def main():
     idx = st.selectbox("Run", range(len(runs)), format_func=lambda i: labels[i])
     run = runs[idx]
     scorecard(run["aggregate"])
-    st.dataframe(per_question_table(run), use_container_width=True)
+    st.dataframe(per_question_table(run), width="stretch")
 
     st.caption("Expand a question to see ground truth, the generated answer, and retrieved chunks.")
     for r in run["results"]:
