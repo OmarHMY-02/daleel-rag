@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q1",
+    "question": "How many days of annual leave do confirmed full-time employees get per year?",
+    "ground_truth": "Confirmed full-time employees accrue 30 calendar days of annual leave per year, at 2.5 days per completed month of service.",
+    "source_docs": ["02_leave_policy.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q2",
+    "question": "What is the end-of-service gratuity for someone with a 12,000 AED basic salary and 7 years of service?",
+    "ground_truth": "It is AED 66,000. The first five years earn 21 days each (105 days) and the two further years earn 30 days each (60 days), totalling 165 days; at a daily rate of AED 400 (12,000 / 30) that is 165 x 400 = AED 66,000.",
+    "source_docs": ["03_benefits_guide.md"],
+    "type": "numeric_reasoning"
+  },
+  {
+    "id": "q3",
+    "question": "Can I return opened cosmetics?",
+    "ground_truth": "No. Opened cosmetics are non-returnable for hygiene and safety reasons, unless the item is faulty.",
+    "source_docs": ["04_returns_policy.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q4",
+    "question": "What annual spend do I need to reach Platinum loyalty tier, and what do I get?",
+    "ground_truth": "Platinum is reached at AED 30,000 annual spend and includes a 20% point bonus, free express delivery, and a dedicated support line.",
+    "source_docs": ["05_loyalty_terms.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q5",
+    "question": "How long is the probation period and how much notice applies during it?",
+    "ground_truth": "Probation is six months, and during probation either party may end employment with 14 days' written notice.",
+    "source_docs": ["01_employee_handbook.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q6",
+    "question": "If I buy own-brand products on a Gold membership, how do the points work?",
+    "ground_truth": "Own-brand Najmah products earn double points (2 points per AED 1), and Gold members earn a further 10% point bonus on top, so own-brand spend on Gold earns 2 points per AED 1 plus a 10% bonus.",
+    "source_docs": ["05_loyalty_terms.md"],
+    "type": "multi_fact"
+  },
+  {
+    "id": "q7",
+    "question": "How quickly must a suspected data breach be reported and to whom?",
+    "ground_truth": "A suspected data breach must be reported to the Data Protection Officer within 24 hours of discovery.",
+    "source_docs": ["06_data_protection.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q8",
+    "question": "I returned an item I paid for with a loyalty discount. What happens to the points I earned and to my refund?",
+    "ground_truth": "The points earned on that purchase are reversed/deducted when it is refunded (and if that would take the balance below zero, the balance is set to zero). The refund goes back to the original payment method, with card refunds appearing in 7 to 14 business days.",
+    "source_docs": ["04_returns_policy.md", "05_loyalty_terms.md"],
+    "type": "cross_document"
+  },
+  {
+    "id": "q9",
+    "question": "How many days of maternity leave are paid at full pay?",
+    "ground_truth": "Of the 60 days of maternity leave, 45 days are at full pay and 15 days at half pay.",
+    "source_docs": ["02_leave_policy.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q10",
+    "question": "Does Najmah offer a free gym membership to employees?",
+    "ground_truth": "The provided documents do not mention a gym membership benefit, so this cannot be answered from the available information.",
+    "source_docs": [],
+    "type": "unanswerable"
+  },
+  {
+    "id": "q11",
+    "question": "How are cash refunds above AED 1,000 handled?",
+    "ground_truth": "Cash purchases above AED 1,000 are refunded by bank transfer within 5 business days, for security reasons.",
+    "source_docs": ["04_returns_policy.md"],
+    "type": "single_fact"
+  },
+  {
+    "id": "q12",
+    "question": "How long are customer transaction records kept and why?",
+    "ground_truth": "Customer transaction records are retained for 5 years to meet tax and audit obligations.",
+    "source_docs": ["06_data_protection.md"],
+    "type": "single_fact"
+  }
+]

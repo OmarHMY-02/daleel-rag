@@ -1,0 +1,13 @@
+# Daleel — runtime dependencies (all free, CPU-only; no GPU required)
+streamlit>=1.40,<2
+sentence-transformers>=3.0,<6
+chromadb>=0.5,<0.7
+groq>=0.11,<1
+requests>=2.31
+numpy>=1.26
+pandas>=2.0
+python-dotenv>=1.0
+# Pin: chromadb's bundled OpenTelemetry ships pre-3.19 protobuf stubs that
+# protobuf>=4 rejects at import. 3.20.x is the compatible floor and still
+# satisfies streamlit (>=3.20,<6). Applies on Streamlit Cloud too.
+protobuf>=3.20,<4

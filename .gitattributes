@@ -1,0 +1,5 @@
+# Normalize line endings: commit LF, so the repo is clean on the Linux deploy host.
+* text=auto eol=lf
+
+# Treat the committed vector store as binary (no EOL munging, no diff noise).
+chroma/** binary

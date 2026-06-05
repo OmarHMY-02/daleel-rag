@@ -1,0 +1,548 @@
+{
+  "config": {
+    "chunk_size": 500,
+    "overlap": 75,
+    "k": 4,
+    "backend": "ollama",
+    "model": "llama3.1:8b",
+    "embed_model": "intfloat/multilingual-e5-small",
+    "label": "chunk500_k4"
+  },
+  "created_at": "2026-06-05T12:54:23+00:00",
+  "aggregate": {
+    "n_questions": 12,
+    "mean_faithfulness": 0.8091,
+    "mean_answer_relevance": 0.8946,
+    "mean_context_precision": 0.7955,
+    "refusal_accuracy": 1.0
+  },
+  "results": [
+    {
+      "id": "q1",
+      "question": "How many days of annual leave do confirmed full-time employees get per year?",
+      "type": "single_fact",
+      "ground_truth": "Confirmed full-time employees accrue 30 calendar days of annual leave per year, at 2.5 days per completed month of service.",
+      "gold_source_docs": [
+        "02_leave_policy.md"
+      ],
+      "answer": "Confirmed full-time employees accrue 30 calendar days of annual leave per year.\n\nSources:\n02_leave_policy.md — 1. Annual Leave\n02_leave_policy.md — 3. Maternity Leave",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "02_leave_policy.md",
+          "heading": "1. Annual Leave",
+          "score": 0.8722,
+          "text": "Confirmed full-time employees accrue 30 calendar days of annual leave per year, accruing at 2.5 days per completed month of service. Employees in their probation period (see Handbook Section 3) accrue leave but generally take it only after confirmation. Up to 10 unused leave days may be carried into the next year; days beyond that are forfeited unless the Company requested the deferral."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "7. Public Holidays",
+          "score": 0.8257,
+          "text": "Public holidays follow the UAE official calendar. When a public holiday falls on a scheduled rest day, store staff receive a compensatory day within 30 days."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "2. Sick Leave",
+          "score": 0.8237,
+          "text": "After probation, employees are entitled to up to 90 days of sick leave per year, paid as follows: the first 15 days at full pay, the next 30 days at half pay, and the remaining 45 days unpaid. A medical certificate is required for any absence longer than two consecutive days."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "3. Maternity Leave",
+          "score": 0.82,
+          "text": "Female employees are entitled to 60 days of maternity leave: 45 days at full pay and 15 days at half pay, available after any period of service. An additional period of unpaid leave may be granted for pregnancy-related illness, supported by a medical certificate."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8832,
+        "context_precision": 1.0,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q2",
+      "question": "What is the end-of-service gratuity for someone with a 12,000 AED basic salary and 7 years of service?",
+      "type": "numeric_reasoning",
+      "ground_truth": "It is AED 66,000. The first five years earn 21 days each (105 days) and the two further years earn 30 days each (60 days), totalling 165 days; at a daily rate of AED 400 (12,000 / 30) that is 165 x 400 = AED 66,000.",
+      "gold_source_docs": [
+        "03_benefits_guide.md"
+      ],
+      "answer": "For the first five years of service: 21 days of basic pay for each year of service.\n- For each year beyond five years: 30 days of basic pay for each year.\n\nAn employee with a basic salary of AED 12,000 and 7 years of service receives (5 × 21 days) + (2 × 30 days) = 105 + 60 = 165 days. Daily basic pay is 12,000 ÷ 30 = AED 400, so gratuity = 165 × 400 = **AED 66,000**.\n\nSources:\n03_benefits_guide.md\n01_employee_handbook.md",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "03_benefits_guide.md",
+          "heading": "1. End-of-Service Gratuity",
+          "score": 0.9036,
+          "text": "Gratuity is calculated on the last basic salary, per UAE law, for employees who complete at least one year of continuous service:\n- For the first five years of service: 21 days of basic pay for each year of service.\n- For each year beyond five years: 30 days of basic pay for each year.\n**Worked example:** An employee with a basic salary of AED 12,000 and 7 years of service receives (5 × 21 days) + (2 × 30 days) = 105 + 60 = 165 days. Daily basic pay is 12,000 ÷ 30 = AED 400, so gratuity = 165 × 400 = **AED 66,000**. Total gratuity is capped at two years' total pay."
+        },
+        {
+          "source": "01_employee_handbook.md",
+          "heading": "7. Exit",
+          "score": 0.8719,
+          "text": "On resignation, confirmed employees give 30 days' notice unless the contract states otherwise. Final settlement, including any end-of-service gratuity calculated per UAE law, is paid within 14 days of the last working day. See the **Employee Benefits Guide** for gratuity calculation details."
+        },
+        {
+          "source": "03_benefits_guide.md",
+          "heading": "5. Education and Training",
+          "score": 0.8395,
+          "text": "The Company sponsors role-relevant certifications up to AED 8,000 per year, subject to manager approval and a 12-month retention commitment after completion."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "2. Membership Tiers",
+          "score": 0.8312,
+          "text": "There are three tiers, reviewed every 12 months based on spend in the preceding year:\n- **Silver:** the entry tier for all members. Standard earning.\n- **Gold:** reached at AED 10,000 annual spend. Earns a 10% point bonus and early access to sales.\n- **Platinum:** reached at AED 30,000 annual spend. Earns a 20% point bonus, free express delivery, and a dedicated support line."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 0.4,
+        "answer_relevance": 0.8947,
+        "context_precision": 0.5,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q3",
+      "question": "Can I return opened cosmetics?",
+      "type": "single_fact",
+      "ground_truth": "No. Opened cosmetics are non-returnable for hygiene and safety reasons, unless the item is faulty.",
+      "gold_source_docs": [
+        "04_returns_policy.md"
+      ],
+      "answer": "Yes, opened cosmetics are non-returnable unless faulty according to [1].\n\nSources:\n04_returns_policy.md — 2. Non-Returnable Items,\n04_returns_policy.md — 1. Return Window",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "04_returns_policy.md",
+          "heading": "2. Non-Returnable Items",
+          "score": 0.8641,
+          "text": "For hygiene and safety reasons, the following are non-returnable unless faulty: underwear, swimwear, pierced jewellery, opened cosmetics, perishable goods, and personalised or made-to-order items. Gift cards are non-refundable."
+        },
+        {
+          "source": "04_returns_policy.md",
+          "heading": "1. Return Window",
+          "score": 0.8414,
+          "text": "Most items may be returned within 30 days of purchase with proof of purchase. Sale and clearance items may be returned within 14 days. The item must be unused, in its original packaging, and in resalable condition."
+        },
+        {
+          "source": "04_returns_policy.md",
+          "heading": "6. Online Orders",
+          "score": 0.8327,
+          "text": "Online returns can be booked through the Najmah account portal, which generates a free return label for UAE addresses. Items must be handed to the courier within 5 days of the label being issued. International orders are not eligible for free returns."
+        },
+        {
+          "source": "04_returns_policy.md",
+          "heading": "7. Loyalty Points on Returns",
+          "score": 0.8313,
+          "text": "Loyalty points earned on a purchase are reversed when that purchase is refunded. See the **Loyalty Programme Terms** for how points accrue and expire."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 0.5,
+        "answer_relevance": 0.9049,
+        "context_precision": 1.0,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q4",
+      "question": "What annual spend do I need to reach Platinum loyalty tier, and what do I get?",
+      "type": "single_fact",
+      "ground_truth": "Platinum is reached at AED 30,000 annual spend and includes a 20% point bonus, free express delivery, and a dedicated support line.",
+      "gold_source_docs": [
+        "05_loyalty_terms.md"
+      ],
+      "answer": "To reach the Platinum loyalty tier, you need to have an annual spend of AED 30,000. As a Platinum member, you earn a 20% point bonus, free express delivery, and a dedicated support line.\n\nSources:\n05_loyalty_terms.md — 2. Membership Tiers\n05_loyalty_terms.md — 1. Earning Points",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "2. Membership Tiers",
+          "score": 0.8906,
+          "text": "There are three tiers, reviewed every 12 months based on spend in the preceding year:\n- **Silver:** the entry tier for all members. Standard earning.\n- **Gold:** reached at AED 10,000 annual spend. Earns a 10% point bonus and early access to sales.\n- **Platinum:** reached at AED 30,000 annual spend. Earns a 20% point bonus, free express delivery, and a dedicated support line."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "1. Earning Points",
+          "score": 0.8343,
+          "text": "Members earn 1 point for every AED 1 spent on eligible purchases. Own-brand Najmah products earn double points (2 points per AED 1). Points are credited within 48 hours of purchase. Purchases of gift cards do not earn points."
+        },
+        {
+          "source": "03_benefits_guide.md",
+          "heading": "5. Education and Training",
+          "score": 0.8258,
+          "text": "The Company sponsors role-relevant certifications up to AED 8,000 per year, subject to manager approval and a 12-month retention commitment after completion."
+        },
+        {
+          "source": "04_returns_policy.md",
+          "heading": "7. Loyalty Points on Returns",
+          "score": 0.8205,
+          "text": "Loyalty points earned on a purchase are reversed when that purchase is refunded. See the **Loyalty Programme Terms** for how points accrue and expire."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.9055,
+        "context_precision": 0.5,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q5",
+      "question": "How long is the probation period and how much notice applies during it?",
+      "type": "single_fact",
+      "ground_truth": "Probation is six months, and during probation either party may end employment with 14 days' written notice.",
+      "gold_source_docs": [
+        "01_employee_handbook.md"
+      ],
+      "answer": "The probation period is six months (source: [1]). During this time, either party may terminate employment with 14 days' written notice (source: [1]).\n\nSources:\n01_employee_handbook.md\n02_leave_policy.md",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "01_employee_handbook.md",
+          "heading": "3. Probation",
+          "score": 0.8802,
+          "text": "New employees serve a probation period of six months. During probation, either party may terminate employment with 14 days' written notice. Annual leave accrues during probation but may only be taken after confirmation, except in exceptional cases approved by a line manager."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "2. Sick Leave",
+          "score": 0.8474,
+          "text": "After probation, employees are entitled to up to 90 days of sick leave per year, paid as follows: the first 15 days at full pay, the next 30 days at half pay, and the remaining 45 days unpaid. A medical certificate is required for any absence longer than two consecutive days."
+        },
+        {
+          "source": "01_employee_handbook.md",
+          "heading": "7. Exit",
+          "score": 0.8347,
+          "text": "On resignation, confirmed employees give 30 days' notice unless the contract states otherwise. Final settlement, including any end-of-service gratuity calculated per UAE law, is paid within 14 days of the last working day. See the **Employee Benefits Guide** for gratuity calculation details."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "1. Annual Leave",
+          "score": 0.8328,
+          "text": "Confirmed full-time employees accrue 30 calendar days of annual leave per year, accruing at 2.5 days per completed month of service. Employees in their probation period (see Handbook Section 3) accrue leave but generally take it only after confirmation. Up to 10 unused leave days may be carried into the next year; days beyond that are forfeited unless the Company requested the deferral."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8849,
+        "context_precision": 0.5,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q6",
+      "question": "If I buy own-brand products on a Gold membership, how do the points work?",
+      "type": "multi_fact",
+      "ground_truth": "Own-brand Najmah products earn double points (2 points per AED 1), and Gold members earn a further 10% point bonus on top, so own-brand spend on Gold earns 2 points per AED 1 plus a 10% bonus.",
+      "gold_source_docs": [
+        "05_loyalty_terms.md"
+      ],
+      "answer": "As a Gold member, you earn standard points for every AED 1 spent (1 point per AED 1). However, since you're buying own-brand Najmah products, they earn double points. So, you'll get 2 points per AED 1 on those purchases.\n\nSources:\n05_loyalty_terms.md — 1. Earning Points\n05_loyalty_terms.md — 2. Membership Tiers",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "1. Earning Points",
+          "score": 0.8618,
+          "text": "Members earn 1 point for every AED 1 spent on eligible purchases. Own-brand Najmah products earn double points (2 points per AED 1). Points are credited within 48 hours of purchase. Purchases of gift cards do not earn points."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "2. Membership Tiers",
+          "score": 0.859,
+          "text": "There are three tiers, reviewed every 12 months based on spend in the preceding year:\n- **Silver:** the entry tier for all members. Standard earning.\n- **Gold:** reached at AED 10,000 annual spend. Earns a 10% point bonus and early access to sales.\n- **Platinum:** reached at AED 30,000 annual spend. Earns a 20% point bonus, free express delivery, and a dedicated support line."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "5. Returns and Points",
+          "score": 0.8516,
+          "text": "When a purchase is refunded, the points earned on it are deducted. If the deduction would take the balance below zero, the balance is set to zero. See the **Customer Returns & Refunds Policy**."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "3. Redeeming Points",
+          "score": 0.8499,
+          "text": "100 points equal AED 5 in redemption value. Points can be redeemed at checkout in store or online, in increments of 100. Points have no cash value and cannot be transferred between accounts."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 0.5,
+        "answer_relevance": 0.9035,
+        "context_precision": 1.0,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q7",
+      "question": "How quickly must a suspected data breach be reported and to whom?",
+      "type": "single_fact",
+      "ground_truth": "A suspected data breach must be reported to the Data Protection Officer within 24 hours of discovery.",
+      "gold_source_docs": [
+        "06_data_protection.md"
+      ],
+      "answer": "A suspected data breach must be reported to the Data Protection Officer within 24 hours of discovery.\n\nSources:\n06_data_protection.md — 6. Security",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "06_data_protection.md",
+          "heading": "6. Security",
+          "score": 0.8439,
+          "text": "Personal data is encrypted in transit and at rest. Access is granted on a least-privilege basis. Staff handling personal data off-site must follow the remote-work safeguards in Handbook Section 5. Suspected data breaches must be reported to the Data Protection Officer within 24 hours of discovery."
+        },
+        {
+          "source": "06_data_protection.md",
+          "heading": "4. Data Subject Rights",
+          "score": 0.8245,
+          "text": "Customers and employees may request access to their data, correction of inaccurate data, or deletion where there is no overriding legal reason to retain it. Requests are answered within 30 days. Identity is verified before any data is released."
+        },
+        {
+          "source": "06_data_protection.md",
+          "heading": "5. Retention",
+          "score": 0.7858,
+          "text": "Customer transaction records are retained for 5 years to meet tax and audit obligations. Loyalty data is retained while the account is active and for 12 months after closure. Employee records are retained for 5 years after the end of employment."
+        },
+        {
+          "source": "06_data_protection.md",
+          "heading": "3. Lawful Basis and Consent",
+          "score": 0.7827,
+          "text": "We process personal data on the basis of contract performance, legal obligation, or consent. Marketing communications are sent only to customers who have opted in, and every message includes an unsubscribe option. Consent can be withdrawn at any time through the account portal."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8932,
+        "context_precision": 1.0,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q8",
+      "question": "I returned an item I paid for with a loyalty discount. What happens to the points I earned and to my refund?",
+      "type": "cross_document",
+      "ground_truth": "The points earned on that purchase are reversed/deducted when it is refunded (and if that would take the balance below zero, the balance is set to zero). The refund goes back to the original payment method, with card refunds appearing in 7 to 14 business days.",
+      "gold_source_docs": [
+        "04_returns_policy.md",
+        "05_loyalty_terms.md"
+      ],
+      "answer": "According to [2], when a purchase is refunded, the points earned on it are deducted. Since you used a loyalty discount, your original purchase likely didn't earn as many points as it would have without the discount. However, since the context doesn't specify how loyalty discounts affect point earnings, we can only consider the general rule that points are deducted when a purchase is refunded.\n\nIf the deduction would take the balance below zero, the balance is set to zero (according to [2]). \n\nSources:\n04_returns_policy.md\n05_loyalty_terms.md",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "04_returns_policy.md",
+          "heading": "7. Loyalty Points on Returns",
+          "score": 0.895,
+          "text": "Loyalty points earned on a purchase are reversed when that purchase is refunded. See the **Loyalty Programme Terms** for how points accrue and expire."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "5. Returns and Points",
+          "score": 0.8893,
+          "text": "When a purchase is refunded, the points earned on it are deducted. If the deduction would take the balance below zero, the balance is set to zero. See the **Customer Returns & Refunds Policy**."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "1. Earning Points",
+          "score": 0.8665,
+          "text": "Members earn 1 point for every AED 1 spent on eligible purchases. Own-brand Najmah products earn double points (2 points per AED 1). Points are credited within 48 hours of purchase. Purchases of gift cards do not earn points."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "3. Redeeming Points",
+          "score": 0.8593,
+          "text": "100 points equal AED 5 in redemption value. Points can be redeemed at checkout in store or online, in increments of 100. Points have no cash value and cannot be transferred between accounts."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 0.6667,
+        "answer_relevance": 0.8919,
+        "context_precision": 1.0,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q9",
+      "question": "How many days of maternity leave are paid at full pay?",
+      "type": "single_fact",
+      "ground_truth": "Of the 60 days of maternity leave, 45 days are at full pay and 15 days at half pay.",
+      "gold_source_docs": [
+        "02_leave_policy.md"
+      ],
+      "answer": "According to passage [1], female employees are entitled to 45 days of maternity leave at full pay.\n\nSources:\n02_leave_policy.md — 3. Maternity Leave\n02_leave_policy.md — 4. Parental Leave\n02_leave_policy.md — 2. Sick Leave\n02_leave_policy.md — 1. Annual Leave",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "02_leave_policy.md",
+          "heading": "3. Maternity Leave",
+          "score": 0.8965,
+          "text": "Female employees are entitled to 60 days of maternity leave: 45 days at full pay and 15 days at half pay, available after any period of service. An additional period of unpaid leave may be granted for pregnancy-related illness, supported by a medical certificate."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "4. Parental Leave",
+          "score": 0.8722,
+          "text": "All parents are entitled to 5 working days of paid parental leave, to be taken within the first six months following the birth of a child."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "2. Sick Leave",
+          "score": 0.8516,
+          "text": "After probation, employees are entitled to up to 90 days of sick leave per year, paid as follows: the first 15 days at full pay, the next 30 days at half pay, and the remaining 45 days unpaid. A medical certificate is required for any absence longer than two consecutive days."
+        },
+        {
+          "source": "02_leave_policy.md",
+          "heading": "1. Annual Leave",
+          "score": 0.8505,
+          "text": "Confirmed full-time employees accrue 30 calendar days of annual leave per year, accruing at 2.5 days per completed month of service. Employees in their probation period (see Handbook Section 3) accrue leave but generally take it only after confirmation. Up to 10 unused leave days may be carried into the next year; days beyond that are forfeited unless the Company requested the deferral."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8992,
+        "context_precision": 1.0,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q10",
+      "question": "Does Najmah offer a free gym membership to employees?",
+      "type": "unanswerable",
+      "ground_truth": "The provided documents do not mention a gym membership benefit, so this cannot be answered from the available information.",
+      "gold_source_docs": [],
+      "answer": "I cannot answer this from the available documents.\n\nSources:\n05_loyalty_terms.md, 03_benefits_guide.md, 01_employee_handbook.md",
+      "refused": true,
+      "expected_refusal": true,
+      "retrieved": [
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "Overview",
+          "score": 0.8725,
+          "text": "The Najmah Rewards programme is free to join for any customer with a Najmah account."
+        },
+        {
+          "source": "03_benefits_guide.md",
+          "heading": "Overview",
+          "score": 0.8519,
+          "text": "Covers benefits beyond leave. Read alongside the **Employee Handbook** (Section 7 on exit) and the **Leave & Attendance Policy**."
+        },
+        {
+          "source": "01_employee_handbook.md",
+          "heading": "1. About This Handbook",
+          "score": 0.8497,
+          "text": "This handbook summarizes the main policies for employees of Najmah Retail Group across our Dubai head office and store network. Where this handbook conflicts with your signed employment contract or UAE law, the contract and the law take precedence. For benefits specifics, see the **Employee Benefits Guide**. For leave mechanics, see the **Leave & Attendance Policy**."
+        },
+        {
+          "source": "03_benefits_guide.md",
+          "heading": "4. Staff Discount",
+          "score": 0.8493,
+          "text": "Employees receive a 25% discount on Najmah own-brand products and 10% on third-party brands, capped at AED 10,000 of discounted value per year. The discount is for personal use only; resale is a Code of Conduct violation (see Handbook Section 4)."
+        }
+      ],
+      "metrics": {
+        "faithfulness": null,
+        "answer_relevance": null,
+        "context_precision": null,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q11",
+      "question": "How are cash refunds above AED 1,000 handled?",
+      "type": "single_fact",
+      "ground_truth": "Cash purchases above AED 1,000 are refunded by bank transfer within 5 business days, for security reasons.",
+      "gold_source_docs": [
+        "04_returns_policy.md"
+      ],
+      "answer": "Cash purchases above AED 1,000 are refunded by bank transfer within 5 business days for security reasons.\n\nSources:\n04_returns_policy.md\n04_returns_policy.md",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "04_returns_policy.md",
+          "heading": "3. Refund Method",
+          "score": 0.8804,
+          "text": "Refunds are issued to the original payment method. Card refunds appear within 7 to 14 business days depending on the bank. Cash purchases above AED 1,000 are refunded by bank transfer within 5 business days for security reasons. Online purchases are refunded once the returned item is received and inspected at the warehouse."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "3. Redeeming Points",
+          "score": 0.8435,
+          "text": "100 points equal AED 5 in redemption value. Points can be redeemed at checkout in store or online, in increments of 100. Points have no cash value and cannot be transferred between accounts."
+        },
+        {
+          "source": "05_loyalty_terms.md",
+          "heading": "5. Returns and Points",
+          "score": 0.8389,
+          "text": "When a purchase is refunded, the points earned on it are deducted. If the deduction would take the balance below zero, the balance is set to zero. See the **Customer Returns & Refunds Policy**."
+        },
+        {
+          "source": "04_returns_policy.md",
+          "heading": "4. Faulty Goods",
+          "score": 0.8387,
+          "text": "If an item is faulty, customers are entitled to a repair, replacement, or refund regardless of the standard return window, in line with UAE consumer protection law. Faulty electronics are assessed within 7 business days."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 0.8333,
+        "answer_relevance": 0.8921,
+        "context_precision": 0.5,
+        "refusal_correct": true
+      }
+    },
+    {
+      "id": "q12",
+      "question": "How long are customer transaction records kept and why?",
+      "type": "single_fact",
+      "ground_truth": "Customer transaction records are retained for 5 years to meet tax and audit obligations.",
+      "gold_source_docs": [
+        "06_data_protection.md"
+      ],
+      "answer": "Customer transaction records are retained for 5 years to meet tax and audit obligations.\n\nSources:\n06_data_protection.md — 5. Retention, \n06_data_protection.md — 4. Data Subject Rights",
+      "refused": false,
+      "expected_refusal": false,
+      "retrieved": [
+        {
+          "source": "06_data_protection.md",
+          "heading": "5. Retention",
+          "score": 0.8946,
+          "text": "Customer transaction records are retained for 5 years to meet tax and audit obligations. Loyalty data is retained while the account is active and for 12 months after closure. Employee records are retained for 5 years after the end of employment."
+        },
+        {
+          "source": "06_data_protection.md",
+          "heading": "4. Data Subject Rights",
+          "score": 0.8583,
+          "text": "Customers and employees may request access to their data, correction of inaccurate data, or deletion where there is no overriding legal reason to retain it. Requests are answered within 30 days. Identity is verified before any data is released."
+        },
+        {
+          "source": "06_data_protection.md",
+          "heading": "6. Security",
+          "score": 0.8451,
+          "text": "Personal data is encrypted in transit and at rest. Access is granted on a least-privilege basis. Staff handling personal data off-site must follow the remote-work safeguards in Handbook Section 5. Suspected data breaches must be reported to the Data Protection Officer within 24 hours of discovery."
+        },
+        {
+          "source": "04_returns_policy.md",
+          "heading": "4. Faulty Goods",
+          "score": 0.8334,
+          "text": "If an item is faulty, customers are entitled to a repair, replacement, or refund regardless of the standard return window, in line with UAE consumer protection law. Faulty electronics are assessed within 7 business days."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.8875,
+        "context_precision": 0.75,
+        "refusal_correct": true
+      }
+    }
+  ]
+}

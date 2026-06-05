@@ -1,0 +1,12 @@
+[theme]
+base = "light"
+primaryColor = "#0E7C66"
+font = "sans serif"
+
+[server]
+headless = true
+# Small corpus + precomputed store: keep uploads off, this is a read-only demo.
+maxUploadSize = 5
+
+[browser]
+gatherUsageStats = false

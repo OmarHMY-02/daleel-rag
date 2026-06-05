@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Model / HF caches (downloaded at runtime, never committed)
+.cache/
+*.bin.tmp
+
+# OS / editor / tooling
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+
+# Internal build spec — kept local, not published to the public repo.
+PROJECT_BRIEF.md
+
+# NOTE: chroma/ and eval/eval_runs/ are intentionally COMMITTED
+# (precomputed store + eval results so the app works with zero build step).
