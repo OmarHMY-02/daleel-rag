@@ -7,6 +7,10 @@ font = "sans serif"
 headless = true
 # Small corpus + precomputed store: keep uploads off, this is a read-only demo.
 maxUploadSize = 5
+# Deployed read-only app: no hot-reload needed. Disabling the watcher also stops
+# Streamlit from scanning transformers' vision modules (which probe torchvision,
+# a dep we don't install) and flooding the logs with harmless tracebacks.
+fileWatcherType = "none"
 
 [browser]
 gatherUsageStats = false
